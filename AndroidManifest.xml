@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="14" android:versionName="0.9.0" package="dvoph.apo.netspoof"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <activity android:label="@string/app_name" android:name=".NetSpoof" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="Setup Status" android:name=".InstallStatus" />
+        <service android:label="Installer Service" android:name="InstallService" />
+        <activity android:label="@string/selecthack" android:name=".SpoofSelector">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+            </intent-filter>
+        </activity>
+        <service android:name="NetSpoofService" />
+        <activity android:label="@string/selectgateway" android:name="RouterSelector" android:noHistory="true" />
+        <activity android:label="@string/selectvictim" android:name="VictimSelector" android:noHistory="true" />
+        <activity android:label="@string/app_name" android:name="SpoofRunning" android:screenOrientation="portrait" />
+        <activity android:label="@string/preferences" android:name="Preferences" />
+        <activity android:theme="@android:style/Theme.Dialog" android:label="@string/about" android:name="About" />
+        <activity android:label="@string/selectvideo" android:name="YoutubeSelector" />
+        <activity android:label="@string/configuring" android:name="MultiSpoofDialogRunner" />
+        <activity android:label="@string/chooseFile" android:name="com.lamerman.FileDialog" />
+    </application>
+</manifest>
